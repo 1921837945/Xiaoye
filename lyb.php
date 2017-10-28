@@ -10,7 +10,6 @@ if (!$con)
     die('Could not connect: ' . mysqli_error($con));
 }
 mysqli_select_db( $con,"mylyb");//选择数据库
-date_default_timezone_set("Asia/Shanghai");  //设置时区
 
 
 echo "<table border='1'>";
