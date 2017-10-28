@@ -4,6 +4,7 @@ if (!$con)
 {
     die('Could not connect: ' . mysqli_error($con));
 }
+
 $sj = date("Y/m/d h:i:sa");
 $sql = "CREATE TABLE liuyan
 (
@@ -12,6 +13,10 @@ content varchar(300),
 sj varchar(30)
 )";
 
-mysqli_query($con,$sql);
+if (!mysqli_query($con,$sql))
+{
+    die('Error: ' . mysqli_error($con));
+}
+
 mysqli_close($con);
 ?>
