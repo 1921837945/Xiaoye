@@ -1,11 +1,6 @@
 <?php
 
 $con = mysqli_connect("localhost","root","");
-if (!$con)
-{
-    die('Could not connect: ' . mysqli_error($con));
-}
-
 mysqli_select_db( $con,"mylyb");
 $writer = $_GET['writer'];
 $sql = "delete from liuyan where writer='".$writer."'";
