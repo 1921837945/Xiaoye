@@ -1,0 +1,16 @@
+<?php
+$con = mysqli_connect("localhost","root","");
+if (!$con)
+{
+    die('Could not connect: ' . mysqli_error($con));
+}
+mysqli_select_db($con,"mylyb");
+$sql = "CREATE TABLE liuyan
+(
+writer varchar(15),
+content varchar(300)
+)";
+
+mysqli_query($con,$sql);
+mysqli_close($con);
+?>
