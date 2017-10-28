@@ -1,0 +1,17 @@
+<?php
+$con = mysqli_connect("localhost","root","");
+if (!$con)
+{
+    die('Could not connect: ' . mysqli_error($con));
+}
+
+$sql = 'CREATE DATABASE mylyb';
+//$sql = 'DROP DATABASE mylyb';
+$retval = mysqli_query( $con, $sql );
+if(! $retval )
+{
+    die('失败: ' . mysqli_error($con));
+}
+echo "成功\n";
+mysqli_close($con);
+?>
