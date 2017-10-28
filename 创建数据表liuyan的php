@@ -4,11 +4,12 @@ if (!$con)
 {
     die('Could not connect: ' . mysqli_error($con));
 }
-mysqli_select_db($con,"mylyb");
+$sj = date("Y/m/d h:i:sa");
 $sql = "CREATE TABLE liuyan
 (
 writer varchar(15),
-content varchar(300)
+content varchar(300),
+sj varchar(30)
 )";
 
 mysqli_query($con,$sql);
