@@ -10,8 +10,8 @@ $sql = 'CREATE DATABASE mylyb';
 $retval = mysqli_query( $con, $sql );
 if(! $retval )
 {
-    die('失败: ' . mysqli_error($con));
+    die('操作失败: ' . mysqli_error($con));
 }
-echo "成功\n";
+echo "操作成功\n";
 mysqli_close($con);
 ?>
