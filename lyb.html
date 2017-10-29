@@ -6,24 +6,28 @@
 </head>
 <body>
 <center>
-    <form action="index.php" method="post">
-        <table width="400" >
-            <tr>
-                <td align="right">留言者：</td>
-                <td><input type="text" name="writer"/></td>
-            </tr>
-            <tr>
-                <td align="right" valign="top">留言内容：</td>
-                <td><textarea name="content" rows="8" cols="35"></textarea></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="提交">
-                    <input type="reset" value="重置">
-                </td>
-            </tr>
-        </table>
-    </form>
+    <?php
+    $con = mysqli_connect("localhost","root","");
+    mysqli_select_db( $con,"mylyb");
+
+    echo "<table border='1'>";
+    echo "<tr><th>楼</th><th>留言者</th><th>留言内容</th><th>时间</th><th>操作</th></tr>";
+    $result = mysqli_query($con,"SELECT * FROM liuyan");//查看liuyan表所有的数据
+    while($row = mysqli_fetch_array($result))
+    {
+        echo "<tr>";
+        echo "<td aligh ='center'>$row[lou]</td>";
+        echo "<td aligh ='center'>$row[writer]</td>";
+        echo "<td aligh ='center'>$row[content]</td>";
+        echo "<td aligh ='center'>$row[sj]</td>";
+        echo "<td aligh ='center'><a href=lyb_delete.php?lou=$row[lou]>删除</a></td>";
+        echo "</tr>";
+        echo "<br>";
+    }
+    echo "</table>";
+
+    mysqli_close($con);
+    ?>
 </center>
 </body>
 </html>
