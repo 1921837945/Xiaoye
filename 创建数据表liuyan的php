@@ -18,6 +18,7 @@ if (!mysqli_query($con,$sql))
 {
     die('Error: ' . mysqli_error($con));
 }
+echo "操作成功";
 
 mysqli_close($con);
 ?>
