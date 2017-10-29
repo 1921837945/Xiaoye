@@ -8,6 +8,7 @@ if (!$con)
 $sj = date("Y/m/d h:i:sa");
 $sql = "CREATE TABLE liuyan
 (
+lou varchar(10),
 writer varchar(15),
 content varchar(300),
 sj varchar(30)
